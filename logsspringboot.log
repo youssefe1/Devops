@@ -2573,3 +2573,38 @@ Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'timesheetdevops'
 2021-10-31 13:02:22.052  INFO 10516 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2021-10-31 13:02:22.052  INFO 10516 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-10-31 13:02:22.052  INFO 10516 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-10-31 15:43:45.910  INFO 18580 --- [main] t.e.spring.EntrepriseServiceImplTest     : Starting EntrepriseServiceImplTest on DESKTOP-O9H55EA with PID 18580 (started by Haytham in C:\Users\Admin\Desktop\Devops)
+2021-10-31 15:43:45.912  INFO 18580 --- [main] t.e.spring.EntrepriseServiceImplTest     : No active profile set, falling back to default profiles: default
+2021-10-31 15:43:46.493  INFO 18580 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2021-10-31 15:43:46.577  INFO 18580 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 76ms. Found 6 repository interfaces.
+2021-10-31 15:43:46.936  INFO 18580 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$708249d3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-10-31 15:43:47.273  INFO 18580 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-10-31 15:43:47.460  INFO 18580 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-10-31 15:43:47.518  INFO 18580 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-10-31 15:43:47.578  INFO 18580 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2021-10-31 15:43:47.581  INFO 18580 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2021-10-31 15:43:47.722  INFO 18580 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2021-10-31 15:43:48.032  INFO 18580 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-10-31 15:43:49.544  INFO 18580 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-31 15:43:49.969  INFO 18580 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2021-10-31 15:43:51.166  INFO 18580 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-10-31 15:43:51.233  WARN 18580 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-10-31 15:43:51.657  INFO 18580 --- [main] t.e.spring.EntrepriseServiceImplTest     : Started EntrepriseServiceImplTest in 5.988 seconds (JVM running for 6.746)
+2021-10-31 15:43:51.734  INFO 18580 --- [main] tn.esprit.spring.config.LoggingAspect    : In method ajouterEntreprise : 
+2021-10-31 15:43:51.837  INFO 18580 --- [main] tn.esprit.spring.config.LoggingAspect    : Method execution time: 105 milliseconds.
+2021-10-31 15:43:51.838  INFO 18580 --- [main] tn.esprit.spring.config.LoggingAspect    : Out of method without errors :ajouterEntreprise
+2021-10-31 15:43:51.848  INFO 18580 --- [main] tn.esprit.spring.config.LoggingAspect    : In method getAllEmployes : 
+2021-10-31 15:43:51.968  INFO 18580 --- [main] tn.esprit.spring.config.LoggingAspect    : Method execution time: 120 milliseconds.
+2021-10-31 15:43:51.969  INFO 18580 --- [main] tn.esprit.spring.config.LoggingAspect    : Out of method without errors :getAllEmployes
+2021-10-31 15:43:52.050  INFO 18580 --- [main] tn.esprit.spring.config.LoggingAspect    : In method ajouterEmploye : 
+2021-10-31 15:43:52.057  INFO 18580 --- [main] tn.esprit.spring.config.LoggingAspect    : Method execution time: 7 milliseconds.
+2021-10-31 15:43:52.057  INFO 18580 --- [main] tn.esprit.spring.config.LoggingAspect    : Out of method without errors :ajouterEmploye
+2021-10-31 15:43:52.061  INFO 18580 --- [main] tn.esprit.spring.config.LoggingAspect    : In method getNombreEmployeJPQL : 
+2021-10-31 15:43:52.090  INFO 18580 --- [main] tn.esprit.spring.config.LoggingAspect    : Method execution time: 29 milliseconds.
+2021-10-31 15:43:52.090  INFO 18580 --- [main] tn.esprit.spring.config.LoggingAspect    : Out of method without errors :getNombreEmployeJPQL
+2021-10-31 15:43:52.130  INFO 18580 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-10-31 15:43:52.133  INFO 18580 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-10-31 15:43:52.135  INFO 18580 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-10-31 15:43:52.138  INFO 18580 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

@@ -82,7 +82,7 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 		Entreprise ee = null ;
 		if(entrepriseManagedEntity.isPresent() ){
 			 Entreprise e = entrepriseManagedEntity.get();
-		return ee= e;	}
+		 ee= e;	}
 		return ee;
 	}
 

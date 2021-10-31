@@ -85,4 +85,20 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 		return ee= e;	}
 		return ee;
 	}
+
+	@Override
+	public List<Entreprise> getAllEntreprises() {
+		return (List<Entreprise>) entrepriseRepoistory.findAll();
+		
+	}
+
+	@Override
+	public List<String> getAllEntrepriseNamesJPQL() {
+		return entrepriseRepoistory.entreprisename();
+		
+	}
+	public int getNombreEntrepriseJPQL() {
+		return entrepriseRepoistory.countent();
+	}
+	
 }

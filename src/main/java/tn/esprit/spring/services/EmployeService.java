@@ -23,13 +23,13 @@ public class EmployeService implements IEmployeService {
 		
 		Employe emp = new Employe();
 		try {
-			l.info("In addEmployee : ");
+			l.info("In add : ");
 			emp = empRepo.save(e);
 			l.debug("employee : " + emp);
-			l.info("Out of addEmployee() : ");
+			l.info("Out of add() : ");
 			
 		}catch (Exception ex){
-			l.error("Error in addEmployee() : " + ex);
+			l.error("Error in add() : " + ex);
 		}
 		
 		 
@@ -43,14 +43,14 @@ public class EmployeService implements IEmployeService {
 		
 		try {
 			
-			l.info("In gettingAllEmployees : ");
+			l.info("In gettingAll : ");
 			employees = (List<Employe>) empRepo.findAll();  
 			for (Employe emp : employees) {
 				l.debug("employees +++ : " + emp);
 			} 
-			l.info("Out of getAllEmployees() : ");
+			l.info("Out of getAll() : ");
 		}catch (Exception e) {
-			l.error("Error in gettnigAllEmployees() : " + e);
+			l.error("Error in gettnigAll() : " + e);
 		}
 		
 		return employees; 
@@ -62,13 +62,13 @@ public class EmployeService implements IEmployeService {
 		
 		Employe emp = new Employe();
 		try {
-			l.info("In updateEmployee : ");
+			l.info("In update : ");
 			 emp = empRepo.save(e);
 			l.debug("employee : " + emp);
-			l.info("Out of updateEmployee() : ");
+			l.info("Out of update : ");
 			
 		}catch (Exception ex){
-			l.error("Error in updateEmployee() : " + ex);
+			l.error("Error in update : " + ex);
 		}
 		
 		 
@@ -80,12 +80,12 @@ public class EmployeService implements IEmployeService {
 	public void deleteEmployeById(String id) {
 		
 		try {
-			l.info("In deleteEmployee : ");
+			l.info("In delete : ");
 			empRepo.deleteById(Integer.parseInt(id));
-			l.info("Out of deleteEmployee() : ");
+			l.info("Out of delete : ");
 			
 		}catch (Exception ex){
-			l.error("Error in deleteEmployee() : " + ex);
+			l.error("Error in delete : " + ex);
 		}
 		
 		

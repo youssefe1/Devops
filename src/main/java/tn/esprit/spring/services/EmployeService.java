@@ -13,7 +13,7 @@ import tn.esprit.spring.repository.EmployeRepository;
 @Service
 public class EmployeService implements IEmployeService {
 	
-	private static final Logger l = LogManager.getLogger(EmployeService.class); 
+	
 	
 	@Autowired
 	EmployeRepository empRepo;
@@ -23,13 +23,12 @@ public class EmployeService implements IEmployeService {
 		
 		Employe emp = new Employe();
 		try {
-			l.info("In add : ");
+		
 			emp = empRepo.save(e);
-			l.debug("employee : " + emp);
-			l.info("Out of add() : ");
+		
 			
 		}catch (Exception ex){
-			l.error("Error in add() : " + ex);
+			
 		}
 		
 		 
@@ -43,14 +42,14 @@ public class EmployeService implements IEmployeService {
 		
 		try {
 			
-			l.info("In gettingAll : ");
+			
 			employees = (List<Employe>) empRepo.findAll();  
 			for (Employe emp : employees) {
-				l.debug("employees +++ : " + emp);
+				
 			} 
-			l.info("Out of getAll() : ");
+			
 		}catch (Exception e) {
-			l.error("Error in gettnigAll() : " + e);
+			
 		}
 		
 		return employees; 
@@ -62,13 +61,12 @@ public class EmployeService implements IEmployeService {
 		
 		Employe emp = new Employe();
 		try {
-			l.info("In update : ");
+			
 			 emp = empRepo.save(e);
-			l.debug("employee : " + emp);
-			l.info("Out of update : ");
+			
 			
 		}catch (Exception ex){
-			l.error("Error in update : " + ex);
+			
 		}
 		
 		 
@@ -80,12 +78,12 @@ public class EmployeService implements IEmployeService {
 	public void deleteEmployeById(String id) {
 		
 		try {
-			l.info("In delete : ");
+			
 			empRepo.deleteById(Integer.parseInt(id));
-			l.info("Out of delete : ");
+			
 			
 		}catch (Exception ex){
-			l.error("Error in delete : " + ex);
+			
 		}
 		
 		
@@ -93,10 +91,9 @@ public class EmployeService implements IEmployeService {
 
 	@Override
 	public Employe getEmployebyId(String id) {
-		l.info("in  getEmploye id = " + id);
+		
 		Employe e =  empRepo.findById(Integer.parseInt(id)).orElse(null); 
-		l.info("emp returned : " + e);
-		l.info("out  getEmploye id = " + id);
+		
 		return e; 
 	}
 

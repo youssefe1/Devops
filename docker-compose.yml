@@ -6,10 +6,10 @@ services:
   volumes:
   - "C:/Users/Youssef/Desktop/Docker/data:/var/lib/mysql"
   environment:
-   - MYSQL_ROOT_PASSWORD=youssef
+   - MYSQL_ROOT_PASSWORD=root
    - MYSQL_DATABASE=entreprise      
-   - MYSQL_USER=youssef
-   - MYSQL_PASSWORD=youssef
+   - MYSQL_USER=root
+   - MYSQL_PASSWORD=root
   ports:
    - "3302:3306"
   stdin_open: true
@@ -23,8 +23,8 @@ services:
    - mysqldb
   environment:
    - PMA_HOST=mysqldb
-   - PMA_USER=youssef
-   - PMA_PASSWORD=youssef
+   - PMA_USER=root
+   - PMA_PASSWORD=root
    
  Timesheet-entreprise:
   build: .
@@ -34,11 +34,11 @@ services:
   depends_on:
    - mysqldb
   environment:
-   SPRING_APPLICATION_JSON: '{
-        "spring.datasource.url"  : "jdbc:mysql://mysqldb/entreprise?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
-        "spring.datasource.username" : "youssef",
-        "spring.datasource.password" : "youssef",
-        "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
+  
+        "spring.datasource.url"  : "jdbc:mysql://mysqldb:3302/entreprise?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
+        "spring.datasource.username" : "root"
+        "spring.datasource.password" : "root"
+        "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect"
         "spring.jpa.hibernate.ddl-auto" : "update"
-      }'
+      
      

@@ -11,7 +11,7 @@ services:
    - MYSQL_USER=root
    - MYSQL_PASSWORD=youssef
   ports:
-   - "3302:3306"
+   - "3306:3306"
    
  phpmyadmin:
   image: phpmyadmin/phpmyadmin

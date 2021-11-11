@@ -30,7 +30,7 @@ services:
   build: \
   image: entreprise
   ports:
-   - 8090:8082
+   - 8082:8082
   depends_on:
    - mysqldb
   environment:

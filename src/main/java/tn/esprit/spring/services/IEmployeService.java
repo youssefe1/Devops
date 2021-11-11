@@ -21,6 +21,5 @@ public interface IEmployeService {
 	void deleteContratById(String id);
 	
 
-
 	
 }

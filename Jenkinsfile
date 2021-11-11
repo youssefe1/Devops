@@ -1,7 +1,7 @@
 pipeline {
  environment {
     registry = "youssefe1/timesheet"
-    registryCredential = 'dockerhub'
+    registryCredential = 'dockerhub_id'
     dockerImage = ''
   }
     agent any

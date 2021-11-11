@@ -8,8 +8,8 @@ services:
   environment:
    - MYSQL_ROOT_PASSWORD=root
    - MYSQL_DATABASE=entreprise      
-   - MYSQL_USER=root
-   - MYSQL_PASSWORD=root
+   - MYSQL_USER=youssef
+   - MYSQL_PASSWORD=youssef
   ports:
    - "3302:3306"
  
@@ -22,8 +22,8 @@ services:
    - mysqldb
   environment:
    - PMA_HOST=mysqldb
-   - PMA_USER=root
-   - PMA_PASSWORD=root
+   - PMA_USER=youssef
+   - PMA_PASSWORD=youssef
    
  Timesheet-entreprise:
   build: .
@@ -33,12 +33,13 @@ services:
   depends_on:
    - mysqldb
   environment:
-  
-        "spring.datasource.url"  : "jdbc:mysql://mysqldb:3302/entreprise?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
-        "spring.datasource.username" : "root"
-        "spring.datasource.password" : "root"
-        "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect"
+    SPRING_APPLICATION_JSON: '{
+        "spring.datasource.url"  : "jdbc:mysql://mysqldb:3302/entreprise?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
+        "spring.datasource.username" : "youssef",
+        "spring.datasource.password" : "root",
+        "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
         "spring.jpa.hibernate.ddl-auto" : "update"
+     }'   
   stdin_open: true
   tty: true
   

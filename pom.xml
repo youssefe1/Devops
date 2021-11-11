@@ -57,7 +57,7 @@
 				<artifactId>maven-deploy-plugin</artifactId>
 				<configuration>
 				<archive>
-				<manifestFile>src/main/resources/custom/MANIFEST.MF</manifestFile>
+				<manifestFile>src/main/resources/MANIFEST.MF</manifestFile>
 				<manifest>
 				<addClasspath>true</addClasspath>
 				</manifest>

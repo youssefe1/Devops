@@ -26,18 +26,19 @@ services:
    - PMA_PASSWORD=youssef
    
  Timesheet-entreprise:
-  build: \
-   image: springboot-docker-container
+  build:
+      context: "./"
+      dockerfile: "Dockerfile"
+  image: springboot-docker-container
   ports:
    - 8082:8082
   depends_on:
    - mysqldb
- environment:
+  environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb/timeSheetDevOps?autoReconnect=true&useSSL=false
       SPRING_DATASOURCE_USERNAME: "youssef"
       SPRING_DATASOURCE_PASSWORD: "root"
-    build:
-      context: "./"
+   
       
   stdin_open: true
   tty: true

@@ -14,27 +14,24 @@ services:
    - "3302:3306"
    
  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    ports:
-      - 1235:80
-    depends_on:
-      - mysqldb
-    environment:
-      - PMA_HOST=mariadb
-      - PMA_USER=root
-      - PMA_PASSWORD= youssef
-
-  stdin_open: true
-  tty: true
-
- Timesheet-contrat-A:
-  build: \
-  image: entreprise
+  image: phpmyadmin/phpmyadmin
   ports:
-    - 8090:8082
+   - 1235:80
   depends_on:
    - mysqldb
   environment:
+   - PMA_HOST=mariadb
+   - PMA_USER=root
+   - PMA_PASSWORD= youssef
+
+  Timesheet-entreprise:
+   build: \
+   image: entreprise
+   ports:
+     - 8090:8082
+   depends_on:
+    - mysqldb
+   environment:
    SPRING_APPLICATION_JSON: '{
         "spring.datasource.url"  : "jdbc:mysql://mysqldb:3306/spring?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
         "spring.datasource.username" : "root",

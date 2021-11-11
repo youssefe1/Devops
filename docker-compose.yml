@@ -12,6 +12,8 @@ services:
    - MYSQL_PASSWORD=youssef
   ports:
    - "3306:3306"
+  stdin_open: true
+  tty: true 
    
  phpmyadmin:
   image: phpmyadmin/phpmyadmin
@@ -23,6 +25,7 @@ services:
    - PMA_HOST=mysqldb
    - PMA_USER=root
    - PMA_PASSWORD= youssef
+   
  Timesheet-entreprise:
    build: \
    image: entreprise

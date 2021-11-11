@@ -14,8 +14,8 @@ services:
   stdin_open: true
   tty: true
 
- Timesheet-contrat-A:
-  build: \
+ Timesheet-app:
+  build: .
   image: entreprise
   ports:
     - 8082:8082

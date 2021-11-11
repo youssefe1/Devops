@@ -3,6 +3,8 @@ services:
  mysqldb:
   image: mysql:5.7
   restart: unless-stopped
+  volumes:
+  - "C:/Users/Youssef/Desktop/Docker/data:/var/lib/mysql"
   environment:
    - MYSQL_ROOT_PASSWORD=root
    - MYSQL_DATABASE=entreprise      
@@ -40,5 +42,3 @@ services:
         "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
         "spring.jpa.hibernate.ddl-auto" : "update"
       }'
-volumes:
-  - C:\Users\Youssef\Desktop\Docker\data:/var/lib/mysql

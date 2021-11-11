@@ -27,18 +27,17 @@ services:
    
  Timesheet-entreprise:
   build: \
-  image: entreprise
+   image: springboot-docker-container
   ports:
    - 8082:8082
   depends_on:
    - mysqldb
-  environment:
-    SPRING_APPLICATION_JSON: '{
-        "spring.datasource.url"  : "jdbc:mysql://mysqldb:3302/entreprise?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false",
-        "spring.datasource.username" : "youssef",
-        "spring.datasource.password" : "root",
-        "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
-        "spring.jpa.hibernate.ddl-auto" : "update"
-     }'   
+ environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb/timeSheetDevOps?autoReconnect=true&useSSL=false
+      SPRING_DATASOURCE_USERNAME: "youssef"
+      SPRING_DATASOURCE_PASSWORD: "root"
+    build:
+      context: "./"
+      
   stdin_open: true
   tty: true

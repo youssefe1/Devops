@@ -55,6 +55,17 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-deploy-plugin</artifactId>
+				<configuration>
+				<archive>
+				<manifestFile>src/main/resources/custom/MANIFEST.MF</manifestFile>
+				<manifest>
+				<addClasspath>true</addClasspath>
+				</manifest>
+				<manifestEntries>
+				<Built-By>Youssef</Built-By>
+				</manifestEntries>
+				</archive>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

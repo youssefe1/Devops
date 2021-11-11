@@ -1,5 +1,9 @@
 pipeline {
-
+ environment {
+    registry = "youssefe1/timesheet"
+    registryCredential = 'dockerhub'
+    dockerImage = ''
+  }
     agent any
 
 
@@ -24,6 +28,35 @@ pipeline {
                 bat "mvn deploy"
             }
         }
+        
+        stage('Building image') {
+      steps{
+        script {
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+        }
+      }
+    }
+  stage('Deploy Image') {
+      steps{
+        script {
+          docker.withRegistry( '', registryCredential ) {
+            dockerImage.push()
+          }
+        }
+      }
+    }
+    
+     stage('Run images/mysql-phpmyadmin on a container') {
+      steps{
+        bat "docker-compose up --detach"
+      }
+    }
+    
+    stage('Delete the unused images') {
+        steps {
+            bat "docker rmi $registry:$BUILD_NUMBER"
+                }
+            }
     }
    
     post {

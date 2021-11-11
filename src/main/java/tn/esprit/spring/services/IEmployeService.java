@@ -19,6 +19,7 @@ public interface IEmployeService {
 	public void deleteAllContratJPQL();
 	public Contrat getContratByID(String id);
 	void deleteContratById(String id);
+	
 
 	
 }

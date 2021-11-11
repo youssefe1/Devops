@@ -1,5 +1,4 @@
-FROM maven:3.8.2-jdk-8
-WORKDIR /entreprise
+FROM openjdk:8-jdk-alpine
 EXPOSE 8082
-COPY /target/timesheetDEVOPS-1.3.jar /entreprise/Entreprise.jar
-ENTRYPOINT [ "java","-jar","Entreprise.jar"]
+ADD /target/timesheetDEVOPS-1.3.jar app.jar
+ENTRYPOINT [ "java", "-jar"	 , "/app.jar"]

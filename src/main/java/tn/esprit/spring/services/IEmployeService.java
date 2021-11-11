@@ -20,7 +20,7 @@ public interface IEmployeService {
 	public Contrat getContratByID(String id);
 	void deleteContratById(String id);
 	
-	
+
 
 	
 }

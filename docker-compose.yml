@@ -27,7 +27,7 @@ services:
    - PMA_PASSWORD= youssef
    
  Timesheet-entreprise:
-  build: \
+  build: .
   image: entreprise
   ports:
    - 8082:8082

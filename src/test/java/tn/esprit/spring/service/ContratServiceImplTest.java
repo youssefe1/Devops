@@ -81,6 +81,7 @@ public class ContratServiceImplTest {
 		es.deleteAllContratJPQL();
 		//THEN
 		assertThat(contrats).size().isZero();
+		
 	}
 
 

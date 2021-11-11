@@ -7,4 +7,6 @@ import tn.esprit.spring.entities.Employe;
 
 public interface ContratRepository extends CrudRepository<Contrat, Integer>{
 
+	
+	
 }

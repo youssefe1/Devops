@@ -111,5 +111,6 @@ public class EmployeService implements IEmployeService {
 	public Contrat getContratByID(String id) {
 		 
 		return ContratRepository.findById(Integer.parseInt(id)).orElse(null); 
+		
 	}
 }

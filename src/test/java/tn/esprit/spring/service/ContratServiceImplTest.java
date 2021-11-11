@@ -83,7 +83,6 @@ public class ContratServiceImplTest {
 		assertThat(contrats).size().isZero();
 	
 		
-		
 	}
 
 

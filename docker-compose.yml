@@ -20,7 +20,7 @@ services:
   depends_on:
    - mysqldb
   environment:
-   - PMA_HOST=mariadb
+   - PMA_HOST=mysqldb
    - PMA_USER=root
    - PMA_PASSWORD= youssef
  Timesheet-entreprise:
@@ -32,7 +32,7 @@ services:
     - mysqldb
    environment:
     SPRING_APPLICATION_JSON: '{
-        "spring.datasource.url"  : "jdbc:mysql://mysqldb:3302/spring?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
+        "spring.datasource.url"  : "jdbc:mysql://mysqldb:3302/entreprise?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
         "spring.datasource.username" : "root",
         "spring.datasource.password" : "youssef",
         "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",

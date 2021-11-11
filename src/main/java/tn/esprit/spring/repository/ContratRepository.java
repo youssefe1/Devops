@@ -9,4 +9,5 @@ public interface ContratRepository extends CrudRepository<Contrat, Integer>{
 
 	
 	
+	
 }

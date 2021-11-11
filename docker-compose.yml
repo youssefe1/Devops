@@ -1,0 +1,44 @@
+version: "2.4"
+services:
+ mysqldb:
+  image: mysql:5.7
+  restart: unless-stopped
+  environment:
+   - MYSQL_ROOT_PASSWORD=root
+   - MYSQL_DATABASE=entreprise      
+   - MYSQL_USER=root
+   - MYSQL_PASSWORD=youssef
+  ports:
+   - "3302:3306"
+   
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 1235:80
+    depends_on:
+      - mysqldb
+    environment:
+      - PMA_HOST=mariadb
+      - PMA_USER=root
+      - PMA_PASSWORD= youssef
+
+  stdin_open: true
+  tty: true
+
+ Timesheet-contrat-A:
+  build: \
+  image: entreprise
+  ports:
+    - 8090:8082
+  depends_on:
+   - mysqldb
+  environment:
+   SPRING_APPLICATION_JSON: '{
+        "spring.datasource.url"  : "jdbc:mysql://mysqldb:3306/spring?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
+        "spring.datasource.username" : "root",
+        "spring.datasource.password" : "youssef",
+        "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
+        "spring.jpa.hibernate.ddl-auto" : "update"
+      }'
+volumes:
+  - C:\Users\Youssef\Desktop\Docker\data:/var/lib/mysql

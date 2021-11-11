@@ -12,8 +12,7 @@ services:
    - MYSQL_PASSWORD=root
   ports:
    - "3302:3306"
-  stdin_open: true
-  tty: true 
+ 
    
  phpmyadmin:
   image: phpmyadmin/phpmyadmin
@@ -40,5 +39,9 @@ services:
         "spring.datasource.password" : "root"
         "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect"
         "spring.jpa.hibernate.ddl-auto" : "update"
+ stdin_open: true
+ tty: true
+ volumes:
+  -m2:/root/.m2
       
      

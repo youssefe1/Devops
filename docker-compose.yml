@@ -34,7 +34,8 @@ services:
    - 8082:8082
   depends_on:
    - mysqldb
-  SPRING_APPLICATION_JSON: '{
+  environment:
+   SPRING_APPLICATION_JSON: '{
         "spring.datasource.url"  : "jdbc:mysql://mysqldb:3302/entreprise?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
         "spring.datasource.username" : "youssef",
         "spring.datasource.password" : "root",

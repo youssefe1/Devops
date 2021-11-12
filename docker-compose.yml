@@ -31,7 +31,7 @@ services:
       dockerfile: "Dockerfile"
   image: springboot-docker-container
   ports:
-   - 8082:8082
+   - 8088:8088
   depends_on:
    - mysqldb
   environment:

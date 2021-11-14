@@ -1,21 +1,19 @@
 pipeline {
-       
-       environment
+
+environment
 {
 registry = "maneltabessi/timesheet"
 registryCredential= 'dockerHub'
 dockerImage = ''
 }
 
-
-
 agent any
 stages{
        stage('Checkout GIT'){
        steps{
              echo 'Pulling...';
-             git branch: 'main',
-             url : 'https://github.com/youssefe1/Devops.git';
+             git branch: 'Meissa_Branch',
+             url : 'https://github.com/TarekMESSAOUDI/Timesheet_DevOps.git';
              }
          }
          
@@ -33,11 +31,11 @@ stages{
           
           stage("Nexus"){
           steps{
-          bat """mvn clean package deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=timesheetDEVOPS -Dversion=1.2 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo  -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/timesheetDEVOPS-1.2.jar"""
+          bat """mvn clean package -Dmaven.test.failure.ignore=true deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=Timesheet_DevOps -Dversion=1.2 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/Timesheet_DevOps-1.2.jar"""
           }
           }
-           
-       stage('Building our image') {
+
+          stage('Building our image') {
           steps { script { dockerImage= docker.build registry + ":$BUILD_NUMBER" } }
           }
           stage('Deploy our image') {
@@ -46,8 +44,6 @@ stages{
           stage('Cleaning up') {
           steps { bat "docker rmi $registry:$BUILD_NUMBER" }
           }
-          }
-          
           }
        
        post {

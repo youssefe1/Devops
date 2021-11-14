@@ -23,7 +23,7 @@ services:
    - PMA_USER=root
    - PMA_PASSWORD=root
    
- Timesheet-entreprise:
+ timesheetDEVOPS:
   build:
       context: "./"
       dockerfile: "Dockerfile"

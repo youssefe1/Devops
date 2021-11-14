@@ -12,7 +12,7 @@ stages{
        stage('Checkout GIT'){
        steps{
              echo 'Pulling...';
-             git branch: 'main',
+             git branch: 'Manel_Branch',
              url : 'https://github.com/youssefe1/Devops.git';
              }
          }

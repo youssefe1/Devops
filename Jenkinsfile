@@ -9,7 +9,7 @@ pipeline {
 
     stages {
       
-        stage("Build") {
+        stage("MvnCleanInstall") {
             steps {
                 bat "mvn -version"
                 bat "mvn clean package"
@@ -17,7 +17,7 @@ pipeline {
             }
         }
         
-        stage("Sonar") {
+        stage("SonarQube") {
             steps {
                 bat "mvn sonar:sonar"
             }
@@ -29,14 +29,14 @@ pipeline {
             }
         }
         
-        stage('Building image') {
+        stage('PicBuild') {
       steps{
         script {
           dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
       }
     }
-  stage('Deploy Image') {
+  stage('PicDeploy') {
       steps{
         script {
           docker.withRegistry( '', registryCredential ) {
@@ -46,13 +46,13 @@ pipeline {
       }
     }
     
-     stage('Run images/mysql-phpmyadmin on a container') {
+     stage('Starting pic of mysql on container') {
       steps{
         bat "docker-compose up --detach"
       }
     }
     
-    stage('Delete the unused images') {
+    stage('Delete unused pics') {
         steps {
             bat "docker rmi $registry:$BUILD_NUMBER"
                 }

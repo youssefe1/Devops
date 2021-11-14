@@ -9,7 +9,7 @@ services:
    - MYSQL_USER=devops
    - MYSQL_PASSWORD=devops
   ports:
-   - "3306:3306"
+   - "3309:3306"
  
    
 

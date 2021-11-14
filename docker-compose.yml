@@ -12,16 +12,7 @@ services:
    - "3306:3306"
  
    
- phpmyadmin:
-  image: phpmyadmin/phpmyadmin
-  ports:
-   - 1235:80
-  depends_on:
-   - mysqldb
-  environment:
-   - PMA_HOST=mysqldb
-   - PMA_USER=devops
-   - PMA_PASSWORD=devops
+
    
  timesheetDEVOPS:
   build:

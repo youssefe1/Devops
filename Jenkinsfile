@@ -2,7 +2,7 @@ pipeline {
 
 environment
 {
-registry = "maneltabessi/timesheet"
+registry = "haithamkossentini/devopsemploye1"
 registryCredential= 'dockerHub'
 dockerImage = ''
 }
@@ -12,8 +12,8 @@ stages{
        stage('Checkout GIT'){
        steps{
              echo 'Pulling...';
-             git branch: 'Meissa_Branch',
-             url : 'https://github.com/TarekMESSAOUDI/Timesheet_DevOps.git';
+             git branch: 'Haitham_branch',
+             url : 'https://github.com/youssefe1/Devops.git';
              }
          }
          
@@ -48,7 +48,7 @@ stages{
        
        post {
     always {
-       mail to: 'meissabnali@gmail.com',
+       mail to: 'haitham.kossentini@esprit.tn',
           subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
           body: "${env.BUILD_URL} has result ${currentBuild.result}"
    

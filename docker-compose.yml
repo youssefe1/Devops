@@ -6,8 +6,8 @@ services:
   environment:
    - MYSQL_ROOT_PASSWORD=root
    - MYSQL_DATABASE=employe      
-   - MYSQL_USER=root
-   - MYSQL_PASSWORD=root
+   - MYSQL_USER=devops
+   - MYSQL_PASSWORD=devops
   ports:
    - "3306:3306"
  
@@ -20,8 +20,8 @@ services:
    - mysqldb
   environment:
    - PMA_HOST=mysqldb
-   - PMA_USER=root
-   - PMA_PASSWORD=root
+   - PMA_USER=devops
+   - PMA_PASSWORD=devops
    
  timesheetDEVOPS:
   build:
@@ -35,8 +35,8 @@ services:
   environment:
    SPRING_APPLICATION_JSON: '{
         "spring.datasource.url"  : "jdbc:mysql://mysqldb:3306/employe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
-        "spring.datasource.username" : "root",
-        "spring.datasource.password" : "root",
+        "spring.datasource.username" : "devops",
+        "spring.datasource.password" : "devops",
         "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
         "spring.jpa.hibernate.ddl-auto" : "update"
       }'

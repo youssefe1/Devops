@@ -12,8 +12,8 @@ stages{
        stage('Checkout GIT'){
        steps{
              echo 'Pulling...';
-             git branch: 'Meissa_Branch',
-             url : 'https://github.com/TarekMESSAOUDI/Timesheet_DevOps.git';
+             git branch: 'main',
+             url : 'https://github.com/youssefe1/Devops.git';
              }
          }
          
@@ -31,7 +31,7 @@ stages{
           
           stage("Nexus"){
           steps{
-          bat """mvn clean package -Dmaven.test.failure.ignore=true deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=Timesheet_DevOps -Dversion=1.2 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/Timesheet_DevOps-1.2.jar"""
+          bat """mvn clean package deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=timesheetDEVOPS -Dversion=1.4 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo  -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/timesheetDEVOPS-1.4.jar"""
           }
           }
 

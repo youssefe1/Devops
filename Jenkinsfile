@@ -52,11 +52,7 @@ pipeline {
       }
     }
     
-    stage('Delete unused pics') {
-        steps {
-            bat "docker rmi $registry:$BUILD_NUMBER"
-                }
-            }
+  
     }
    
     post {

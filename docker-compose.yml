@@ -20,7 +20,7 @@ services:
       dockerfile: "Dockerfile"
   image: root
   ports:
-   - 8088:8088
+   - 8090:8090
   depends_on:
    - mysqldb
   environment:

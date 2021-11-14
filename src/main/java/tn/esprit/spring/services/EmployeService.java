@@ -1,8 +1,9 @@
 package tn.esprit.spring.services;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
-
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -81,15 +82,22 @@ public class EmployeService implements IEmployeService {
 	}
 	@Transactional
 	public void affecterContratAEmploye(int contratId, int employeId) {
+		List<Contrat> contList=new ArrayList();
+		Optional<Contrat> contOpt= contList.stream().min(Comparator.comparing(Contrat::getReference));
+		if(contOpt.isPresent()){
 		Contrat contratManagedEntity = ContratRepository.findById(contratId).get();
+		
 		Employe employeManagedEntity = empRepo.findById(employeId).get();
 
 		contratManagedEntity.setEmploye(employeManagedEntity);
 		ContratRepository.save(contratManagedEntity);
+		}
 		
 	}
 	public int ajouterContrat(Contrat contrat) {
+		
 		ContratRepository.save(contrat);
+		
 		return contrat.getReference();
 	}
 	@Override

@@ -37,7 +37,7 @@ public class ContratServiceImplTest {
 
 	private static final Logger l =
 	LogManager.getLogger(ContratServiceImplTest.class);
-
+/*
 	@Test
 	public void testaffecterContratAEmploye() {
 		//GIVEN
@@ -53,7 +53,7 @@ public class ContratServiceImplTest {
 		//assertEquals(es.getEmployebyId("3"),"kossentini");
 
 		}
-
+*/
 	@Test
 	public void testAddContrat() throws ParseException, java.text.ParseException {
 
@@ -68,6 +68,11 @@ public class ContratServiceImplTest {
 	assertEquals(es.getAllContrats().size(),size+1);
 
 	
+	}
+	@Test
+	public void testListEmpty() {
+		List<Contrat> contrats = es.getAllContrats(); 
+		Assert.assertTrue(contrats.isEmpty());
 	}
 
 
@@ -84,7 +89,6 @@ public class ContratServiceImplTest {
 
 		
 	}
-
 
 
 

@@ -1,6 +1,4 @@
-FROM openjdk:8-jre-alpine
-ENV SPRING_OUTPUT_ANSI_ENABLED=ALWAYS \JAVA_OPTS=""
-WORKDIR /app
-ADD target/*.jar app.jar
-EXPOSE 8082
-ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+FROM openjdk:8-jdk-alpine
+EXPOSE 8088
+ADD /target/timesheetDEVOPS-1.3.jar app.jar
+ENTRYPOINT [ "java", "-jar"	 , "/app.jar"]

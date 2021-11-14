@@ -3,21 +3,31 @@ services:
  mysqldb:
   image: mysql:5.7
   restart: unless-stopped
- 
   environment:
    - MYSQL_ROOT_PASSWORD=root
    - MYSQL_DATABASE=employe      
-   - MYSQL_USER=devops
-   - MYSQL_PASSWORD=devops
+   - MYSQL_USER=root
+   - MYSQL_PASSWORD=root
   ports:
    - "3306:3306"
  
-
- devopsApp:
+   
+ phpmyadmin:
+  image: phpmyadmin/phpmyadmin
+  ports:
+   - 1235:80
+  depends_on:
+   - mysqldb
+  environment:
+   - PMA_HOST=mysqldb
+   - PMA_USER=root
+   - PMA_PASSWORD=root
+   
+ Timesheet-entreprise:
   build:
       context: "./"
       dockerfile: "Dockerfile"
-  image: devops
+  image: springboot-docker-container
   ports:
    - 8088:8088
   depends_on:
@@ -25,7 +35,7 @@ services:
   environment:
    SPRING_APPLICATION_JSON: '{
         "spring.datasource.url"  : "jdbc:mysql://mysqldb:3306/employe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
-        "spring.datasource.username" : "devops",
+        "spring.datasource.username" : "root",
         "spring.datasource.password" : "root",
         "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
         "spring.jpa.hibernate.ddl-auto" : "update"
@@ -34,3 +44,5 @@ services:
       
   stdin_open: true
   tty: true
+
+

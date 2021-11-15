@@ -1,5 +1,10 @@
 pipeline {
-
+environment
+{
+registry = "zeinebchihaoui/timeSheetDEVOPS"
+registryCredential= 'zeinebhub'
+dockerImage = ''
+}
 
 agent any
 stages{

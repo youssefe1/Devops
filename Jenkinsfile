@@ -1,7 +1,7 @@
 pipeline {
 environment
 {
-registry = "zeinebchihaoui/timeSheetDEVOPS"
+registry = "zeinebchihaoui"
 registryCredential= 'zeinebhub'
 dockerImage = ''
 }
